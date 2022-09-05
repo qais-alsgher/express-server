@@ -2,8 +2,9 @@
 
 require('dotenv').config;
 const express = require('express');
-const { connect } = require('http2');
+const cors = require('cors');
 const app = express();
+app.use(cors());
 
 app.get('/', (req, res) => {
     res.status(200).send('Hello World');
@@ -20,7 +21,7 @@ app.post('/person', (req, res) => {
         gender: gender,
 
     }
-    res.status(201).send(`${parson.age}`);
+    res.status(201).send(`${addAge}`);
 })
 
 
